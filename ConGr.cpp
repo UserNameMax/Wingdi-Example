@@ -17,6 +17,7 @@ int main()
 			Sleep(1000);
 			break;
 		case 1:
+			RunEllipse(1, 1, 50, 10, RGB(0, 0, 255));
 			break;
 		default:
 			return 0;
