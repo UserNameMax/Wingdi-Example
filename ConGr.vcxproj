@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="ConGr.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Examples.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>

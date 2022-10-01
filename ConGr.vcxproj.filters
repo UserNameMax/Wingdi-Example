@@ -24,12 +24,18 @@
     <ClCompile Include="Keyboard.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keyboard.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
