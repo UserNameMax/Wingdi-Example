@@ -1,10 +1,9 @@
 #include <windows.h>
 #include <string>
-#include "Keyboard.h"
+#include "Keyboard.h"// хедер функций клавиатуры
 #include "Menu.h"
 
-
-
+// Функция устанавливает шрифт, цвет фона, цвет для вывода текста и прочие параметры типа подчеркивания
 void setTextSettings(HDC hdc,COLORREF BkCollor= RGB(0, 0, 0), COLORREF TextCollor= RGB(255, 255, 255),
     int Height = stdTextHeight,int Width = 0,int Weight = 100,bool Italic = 0,bool Underline = 0,bool StrikeOut = 0) {
     LOGFONT font;
@@ -22,41 +21,45 @@ void setTextSettings(HDC hdc,COLORREF BkCollor= RGB(0, 0, 0), COLORREF TextCollo
     font.lfQuality = 0;// Устанавливает качество вывода
     font.lfPitchAndFamily = 0;// Устанавливает ширину символов и семейство шрифта
 
-    SelectObject(hdc, CreateFontIndirect(&font));
-    SetBkColor(hdc, BkCollor);
-    SetTextColor(hdc, TextCollor);
+    SelectObject(hdc, CreateFontIndirect(&font));// установка шрифта
+    SetBkColor(hdc, BkCollor);// установка цвета цвета заднего фона
+    SetTextColor(hdc, TextCollor);// установка цвета текста
 }
 
-void PrintMenu(HDC hdc,std::string* items,int count,COLORREF color,int x,int y){
+// Функция для вывода пуктов меню
+// x, y - координаты первого символа
+void PrintMenu(HDC hdc,std::string* items,int count,int x,int y){
 	for (int i = 0; i < count; ++i) {
-		TextOutA(hdc, x, y, items[i].c_str(), items[i].size());
+		TextOutA(hdc, x, y, items[i].c_str(), items[i].size()); //печать i-ого пункта
 		y += stdTextHeight;
 	}
 	EndPath(hdc);
 }
 
 int ShowMenu(std::string* items, int count){
-	HDC hdc = GetDC(GetConsoleWindow());
-    setTextSettings(hdc);
-	PrintMenu(hdc,items,count,RGB(255,255,255),100,100);
-    Keys pressedKey;
-    int choise = 0;
-    TextOutA(hdc, 80, 100, ">", 1);
+	HDC hdc = GetDC(GetConsoleWindow()); // получаем контекст отображения
+    setTextSettings(hdc);// устанавливаем параметры теста
+	PrintMenu(hdc,items,count,100,100);// выводим пункты меню
+    Keys pressedKey; //хранилице нажатой клавиши
+    int choise = 0; // выбраный пункт
+    TextOutA(hdc, 80, 100, ">", 1); // выводим стрелку 
     EndPath(hdc);
-    while ((pressedKey = GetKey()) != Enter){
-        setTextSettings(hdc, RGB(0, 0, 0), RGB(0, 0, 0));
-        TextOutA(hdc, 80, 100 + choise * 20, ">", 1);
+    while ((pressedKey = GetKey()) != Enter){ // выполняем цикл пока не нажат ENTER
+        setTextSettings(hdc, RGB(0, 0, 0), RGB(0, 0, 0)); // устанавливаем чёрный цвет для текста
+        TextOutA(hdc, 80, 100 + choise * 20, ">", 1); // стираем старую стрелку
         switch (pressedKey) {
+        // при смещение стрелки берётся остаток, чтобы стрелка не вышла за допустимые границы
         case Up:
-            choise = (choise + count - 1) % count;
+            choise = (choise + count - 1) % count; // поднимаем стрелку вверх (добавляем count, чтобы не получить отрицательный остаток)
             break;
         case Down:
-            choise = (choise + 1) % count;
+            choise = (choise + 1) % count;// опускаеи стрелку вниз
             break;
         }
-        setTextSettings(hdc, RGB(0, 0, 0), RGB(255, 255, 255));
-        TextOutA(hdc, 80, 100 + choise * 20, ">", 1);
+        setTextSettings(hdc, RGB(0, 0, 0), RGB(255, 255, 255)); // возвращаем белый цвет текста
+        TextOutA(hdc, 80, 100 + choise * 20, ">", 1);// выводим новую стрелку
         EndPath(hdc);
     }
-	return choise;
+    ReleaseDC(GetConsoleWindow(), hdc);// освобождаем контекст
+	return choise; // возвращвем выбор
 }

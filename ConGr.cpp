@@ -1,27 +1,25 @@
-﻿#include <iostream>
-#include <windows.h>
-#include <conio.h>
-#include "Menu.h"
+﻿#include <windows.h> //хедер с функциями api
+#include "Menu.h" //хедеры вспомогательных функций
 #include "Examples.h"
 
-int main()
+int main()// точка входа
 {
-	std::string menuItems[] = { "Прямая","Элипс","Выход" };
-	for (;;) {
-		int choise = ShowMenu(menuItems, 3);
-		system("cls");
-		switch (choise)
+	std::string menuItems[] = { "Прямая","Элипс","Выход" }; // список пунктов меню
+	for (;;) { //бесконечгый цикл
+		int choise = ShowMenu(menuItems, 3); // получаем выбор пользователя (см. Menu.h)
+		system("cls");//очистка экрана
+		switch (choise)// выполняем действия в зависемости ои выбора
 		{
-		case 0:
-			RunLine(100,100,300);
-			Sleep(1000);
-			break;
-		case 1:
-			RunEllipse(1, 1, 50, 10, RGB(0, 0, 255));
-			break;
-		default:
-			return 0;
+		case 0:// выбрали "Прямая"
+			RunLine(100,100,300); //Рисуем бегущую линию
+			Sleep(1000); //задерка перед очисткой
+			break; // break чтобы не перйти в другой case
+		case 1:// выбрили "Элипс"
+			RunEllipse(1, 1, 50, 10, RGB(0, 0, 255));//Рисуем бегущий элипс
+			break;// break чтобы не перйти в другой case
+		default:// выбрали "Выход"
+			return 0;//завершаем программу
 		}
-		system("cls");
+		system("cls");// очистка экрана
 	}
 }
