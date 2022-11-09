@@ -20,7 +20,7 @@ void DrawEllipse(int x,int y,int width,int height, COLORREF color) {
 void RunEllipse(int x, int y, int width, int height, COLORREF color) {
 	int k = 1, b = y-k*x,dx = 1;// k,b - задают прямую по которой движется элипс, dx - задаёт направление движения
 	int count = 0;//число ударов
-	for (int i = 0+x;count < 8 ; i+=dx) {// двишаем элипс пока не насчитаем 8 ударов
+	for (int i = x;count < 8 ; i+=dx) {// двишаем элипс пока не насчитаем 8 ударов
 		DrawBox(0, 0, 500, RGB(255, 255, 255)); // рисуем квадрат
 		DrawEllipse(i, k*i+b, width, height, color);// рисуем элипс
 		Sleep(10);//задержка

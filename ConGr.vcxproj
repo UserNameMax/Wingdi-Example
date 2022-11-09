@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="ConGr.cpp" />
     <ClCompile Include="DVD.cpp" />
+    <ClCompile Include="FuncView.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Tabulated.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Examples.h" />
