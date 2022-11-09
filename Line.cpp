@@ -14,7 +14,7 @@ void DrawBox(int x, int y, int a, COLORREF color) {
 // функция для отрисовки отрезка с концами (x1,y1) (x2,y2) цвета color
 void DrawLine(int x1, int y1, int x2, int y2, COLORREF color) {
 	HDC hdc = GetDC(GetConsoleWindow());// получаем контекст
-	HPEN pen = CreatePen(BS_SOLID, 5, color);// создаём перо нужного цвета
+	HPEN pen = CreatePen(BS_SOLID, 1, color);// создаём перо нужного цвета
 	SelectObject(hdc, pen);//устанавливаем перо
 	MoveToEx(hdc, x1, y1,NULL);//устанавливаем перов в первую точку
 	LineTo(hdc, x2, y2);//ведём перо во вторую точку
