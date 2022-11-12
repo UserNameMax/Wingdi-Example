@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 
 void itegralDialog();
+void aboutMe();
 
 int main()// точка входа
 {
@@ -14,7 +15,7 @@ int main()// точка входа
 	for (;;) { //бесконечгый цикл
 		int choise = ShowMenu(menuItems, 7); // получаем выбор пользователя (см. Menu.h)
 		system("cls");//очистка экрана
-		switch (choise)// выполняем действия в зависемости ои выбора
+		switch (choise)// выполняем действия в зависемости от выбора
 		{
 		default:// выбрали "Выход"
 			delete[] table[0];
@@ -39,6 +40,8 @@ int main()// точка входа
 			GetKey();
 			break;
 		case 5:
+			aboutMe();
+			GetKey();
 			break;
 		}
 		system("cls");// очистка экрана

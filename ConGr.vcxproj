@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AboutMyself.cpp" />
     <ClCompile Include="ConGr.cpp" />
     <ClCompile Include="DVD.cpp" />
     <ClCompile Include="FuncView.cpp" />
