@@ -2,16 +2,25 @@
 #include <iostream>
 #include "Menu.h" //хедеры вспомогательных функций
 #include "Examples.h"
+#include "Keyboard.h"
+
+void itegralDialog();
 
 int main()// точка входа
 {
-	std::string menuItems[] = { "Прямая","Элипс","Таблица","График","Выход"}; // список пунктов меню
+	setlocale(LC_ALL, "rus");
+	std::string menuItems[] = { "Прямая","Элипс","Таблица","График","Интеграл","Об авторе","Выход"}; // список пунктов меню
 	double** table = tabulate(-10, 10, 200);
 	for (;;) { //бесконечгый цикл
-		int choise = ShowMenu(menuItems, 5); // получаем выбор пользователя (см. Menu.h)
+		int choise = ShowMenu(menuItems, 7); // получаем выбор пользователя (см. Menu.h)
 		system("cls");//очистка экрана
 		switch (choise)// выполняем действия в зависемости ои выбора
 		{
+		default:// выбрали "Выход"
+			delete[] table[0];
+			delete[] table[1];
+			delete[] table;
+			return 0;//завершаем программу
 		case 0:// выбрали "Прямая"
 			RunLine(100,100,300); //Рисуем бегущую линию
 			Sleep(1000); //задерка перед очисткой
@@ -25,8 +34,12 @@ int main()// точка входа
 		case 3:
 			drawGrafic(table, 200);
 			break;
-		default:// выбрали "Выход"
-			return 0;//завершаем программу
+		case 4:
+			itegralDialog();
+			GetKey();
+			break;
+		case 5:
+			break;
 		}
 		system("cls");// очистка экрана
 	}

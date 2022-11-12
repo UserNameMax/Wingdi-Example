@@ -130,6 +130,7 @@
     <ClCompile Include="ConGr.cpp" />
     <ClCompile Include="DVD.cpp" />
     <ClCompile Include="FuncView.cpp" />
+    <ClCompile Include="Integral.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Menu.cpp" />

@@ -1,14 +1,2 @@
-﻿  FuncView.cpp
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(27,36): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(27,29): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(27,22): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(27,15): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(33,36): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(33,29): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(33,22): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(33,15): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(41,37): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(41,30): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(41,23): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-C:\Users\kirov\source\repos\ConGr\FuncView.cpp(41,16): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+﻿  Integral.cpp
   ConGr.vcxproj -> C:\Users\kirov\source\repos\ConGr\x64\Debug\ConGr.exe
